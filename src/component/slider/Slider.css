@@ -1,8 +1,15 @@
+.section {
+  width: 80vw;
+  margin: 5rem auto;
+  max-width: 1000px;
+}  
+
 @media screen and (min-width: 992px) {
   .section {
     width: 95vw;
   }
 }
+
 
 .section-center {
   height: 250px;
@@ -34,7 +41,6 @@ article.nextSlide {
 
 .banner-img {
   margin-top: 97px;
-
   width: 100%;
   z-index: -1;
   margin-bottom: -140px;
