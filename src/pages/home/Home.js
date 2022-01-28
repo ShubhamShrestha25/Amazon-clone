@@ -10,6 +10,7 @@ import Banner5 from "../../BannerImages/Banner5.jpg";
 import Banner6 from "../../BannerImages/Banner6.jpg";
 import Slider from "../../component/slider/Slider";
 import Product from "../../component/product/Product";
+import BackToTop from "../../component/backToTop/BackToTop";
 
 const Home = () => {
   const bannerImages = [Banner1, Banner2, Banner3, Banner4, Banner5, Banner6];
@@ -36,7 +37,7 @@ const Home = () => {
               />
             ))}
           </div>
-          <div style={{ marginTop: "40px" }}>
+          <div style={{ marginTop: "25px" }}>
             <div className="home-row">
               {products.slice(2, 5).map((item) => (
                 <Product
@@ -64,6 +65,9 @@ const Home = () => {
                   detail={item.detail}
                 />
               ))}
+            </div>
+            <div style={{ marginTop: "10px" }}>
+              <BackToTop />
             </div>
           </div>
         </div>
