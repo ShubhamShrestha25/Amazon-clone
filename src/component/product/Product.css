@@ -32,8 +32,9 @@
 }
 
 .info {
-  height: 100px;
+  height: 105px;
   margin-bottom: 15px;
+  overflow-y: hidden;
 }
 
 .rating {
