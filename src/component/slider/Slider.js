@@ -36,9 +36,7 @@ const Slider = ({ images }) => {
             indexImage === index - 1 ||
             (index === 0 && indexImage === images.length - 1)
           ) {
-            {
-              position = "lastSlide";
-            }
+            position = "lastSlide";
           }
           return (
             <article className={position} key={indexImage}>

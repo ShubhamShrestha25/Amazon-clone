@@ -1,5 +1,5 @@
 import * as types from "./actionTypes";
-import { auth } from "../utils/firebase";
+import { auth } from "../../utils/firebasee";
 
 const registerStart = () => ({
   type: types.REGISTER_START,
