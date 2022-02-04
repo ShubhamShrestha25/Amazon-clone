@@ -6,8 +6,18 @@ import {
   ShoppingCartOutlined,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutInitiate } from "../../redux/action/actions";
 
 const Header = () => {
+  const { user } = useSelector((state) => state.data);
+  let dispatch = useDispatch();
+  const handleAuth = () => {
+    if (user) {
+      dispatch(logoutInitiate());
+    }
+  };
+
   return (
     <div className="header">
       <Link to="/">
@@ -32,10 +42,14 @@ const Header = () => {
         <Search className="searchIcon" />
       </div>
       <div className="header-nav">
-        <Link to="/login" className="header-link">
-          <div className="header-option">
-            <span className="header-option1">Hello Guest</span>
-            <span className="header-option2">Sign In</span>
+        <Link to={`${user ? "/" : "/login"}`} className="header-link">
+          <div onClick={handleAuth} className="header-option">
+            <span className="header-option1">
+              Hello {user ? user.email : "Guest"}
+            </span>
+            <span className="header-option2">
+              {user ? "Sign Out" : "Sign In"}
+            </span>
           </div>
         </Link>
         <Link to="/orders" className="header-link">
