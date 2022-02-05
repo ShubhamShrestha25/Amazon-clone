@@ -11,3 +11,5 @@ export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const LOGOUT_FAILURE = "LOGOUT_FAILURE";
 
 export const SET_USER = "SET_USER";
+
+export const ADD_TO_BASKET = "ADD_TO_BASKET";
