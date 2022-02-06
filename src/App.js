@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { auth } from "./utils/firebasee";
 import { setUser } from "./redux/action/actions";
+import SingleProduct from "./pages/SingleProduct.js/SingleProduct";
 
 function App() {
   let dispatch = useDispatch();
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/product/:id" element={<SingleProduct />} />
       </Routes>
     </div>
   );
