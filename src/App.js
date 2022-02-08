@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { auth } from "./utils/firebasee";
 import { setUser } from "./redux/action/actions";
 import SingleProduct from "./pages/SingleProduct.js/SingleProduct";
+import Checkout from "./pages/checkout/Checkout";
 
 function App() {
   let dispatch = useDispatch();
@@ -28,6 +29,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/product/:id" element={<SingleProduct />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </div>
   );
