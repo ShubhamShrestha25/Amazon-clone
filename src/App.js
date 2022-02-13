@@ -13,7 +13,7 @@ import Payment from "./pages/payment/Payment";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
-const promise = loadStripe(process.env.STRIPE_PUBLIC_KEY);
+const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 function App() {
   let dispatch = useDispatch();
@@ -29,16 +29,21 @@ function App() {
 
   return (
     <div className="App">
-      <Elements stripe={promise}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/product/:id" element={<SingleProduct />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/payment" element={<Payment />} />
-        </Routes>
-      </Elements>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/product/:id" element={<SingleProduct />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route
+          path="/payment"
+          element={
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
+          }
+        />
+      </Routes>
     </div>
   );
 }
